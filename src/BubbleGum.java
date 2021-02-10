@@ -10,7 +10,7 @@ public class BubbleGum {
 		
 		System.out.print("Enter your numbers one by one :) - ");
 		
-		int mylist[] = new int[5];
+		int mylist[] = new int[n];
 		
 		for(int i = 0; i< n; i++)
 			mylist[i] = s.nextInt();
