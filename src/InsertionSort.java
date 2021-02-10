@@ -1,7 +1,6 @@
-import java.util.*;
+import java.util.Scanner;
 
-public class BubbleGum {
-	
+public class InsertionSort {
 	public static void main(String[] param) {
 		Scanner s = new Scanner(System.in);
 		System.out.println("Hey buddy! How many elements to sort ??? ");
@@ -15,7 +14,7 @@ public class BubbleGum {
 		for(int i = 0; i< n; i++)
 			mylist[i] = s.nextInt();
 		
-		bubbleSort(mylist);
+		insertionSort(mylist);
 		
 		System.out.print("Your sorted list -> ");
 		for(int i = 0; i< n; i++) {
@@ -23,16 +22,17 @@ public class BubbleGum {
 		}
 	}
 	
-	private static void bubbleSort(int[] alist) {
+	private static void insertionSort(int[] alist) {
 		
 		int list_length = alist.length;
-		for(int i = 0; i< list_length; i++)
-			for(int j = 0; j< list_length-i-1; j++)
-				if(alist[j]>alist[j+1]) {
-					int t = alist[j];
-					alist[j]= alist[j+1];
-					alist[j+1] = t;
-				}
+		for(int i = 0; i< list_length; i++) {
+			int ce = i;
+			while(ce>=1 && alist[ce]<alist[ce-1]) {
+				int t = alist[ce];
+				alist[ce]= alist[ce-1];
+				alist[ce-1] = t;
+				ce--;
+			}
+		}
 	}
-
 }
